@@ -92,14 +92,14 @@ The nine validation scenes with the highest final error
 
 Three patterns account for almost all of them:
 
-1. **Missed turns.** In six of the nine, the agent turns and every one of the
-   six modes goes straight. The modes spread out along the direction of travel
+1. **Missed turns.** In five of the nine, the agent turns or changes lane and
+   all or nearly all of the six modes go straight. The modes spread out along the direction of travel
    (different speeds) rather than across manoeuvres, so a turn that the history
    does not hint at is not covered at all. Winner-takes-all training only rewards
    the closest mode, and with most training futures being roughly straight, the
    queries specialise in speed rather than in direction.
-2. **Wrong speed profile.** In two scenes the path is right but the agent
-   accelerates far more than any mode predicts (for example pulling away after a
+2. **Wrong speed profile.** In three scenes the path is right but the agent
+   travels much further than any mode predicts (for example pulling away after a
    turn), leaving the best mode 20 m or more short.
 3. **Wrong direction of travel.** In the worst scene the predictions run opposite
    to the true future. I have not confirmed the cause; a heading that is
