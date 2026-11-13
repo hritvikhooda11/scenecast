@@ -128,6 +128,9 @@ Evaluate everything in one table, then render figures:
 python -m scenecast.evaluate --data data/processed/av2/val --ckpt runs/base/best.pt runs/no-map/best.pt runs/no-neighbors/best.pt runs/one-mode/best.pt
 python -m scenecast.viz --data data/processed/av2/val --ckpt runs/base/best.pt --out assets/grid.png
 python -m scenecast.viz --data data/processed/av2/val --ckpt runs/base/best.pt --out assets/demo.gif --index 12
+
+# failure analysis: the nine scenes with the highest final error
+python -m scenecast.viz --data data/processed/av2/val --ckpt runs/base/best.pt --out assets/failures.png --worst
 ```
 
 ## Repository layout
