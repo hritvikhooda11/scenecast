@@ -1,2 +1,19 @@
-% PLACEHOLDER: generated from results/collapse_study.json once the eight runs finish.
-\begin{center}\textit{[Table: results of the $2\times2$ study, pending completion of the runs.]}\end{center}
+\begin{table}[t]
+\centering
+\caption{Mode-collapse study on the synthetic task (800 validation scenes). Each entry gives
+the two seeds as seed 0 / seed 1. minFDE$_6$ and spread are in metres. ``Dropout off'' is the
+usual evaluation mode; ``dropout on'' evaluates the same weights in training mode.}
+\label{tab:collapse}
+\begin{tabular}{cc cc cc}
+\toprule
+ & & \multicolumn{2}{c}{Dropout off} & \multicolumn{2}{c}{Dropout on} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+Query init.\ std & Decoder dropout & minFDE$_6$ & Spread & minFDE$_6$ & Spread \\
+\midrule
+0.02 & 0.1 & 10.79 / 10.51 & 1.1 / 0.6 & 1.11 / 1.02 & 14.4 / 13.5 \\
+0.02 & 0 & 0.49 / 0.55 & 14.4 / 20.9 & 0.54 / 0.62 & 14.4 / 20.8 \\
+1 & 0.1 & 0.40 / 0.43 & 13.8 / 14.0 & 0.57 / 0.66 & 13.8 / 14.0 \\
+1 & 0 & 0.42 / 0.38 & 14.7 / 14.3 & 0.47 / 0.43 & 14.7 / 14.3 \\
+\bottomrule
+\end{tabular}
+\end{table}

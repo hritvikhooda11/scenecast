@@ -1,2 +1,17 @@
-% PLACEHOLDER: to be written from the study results.
-\textit{[Discussion pending the results of the study.]}
+Table~\ref{tab:collapse} shows that the collapse requires both factors together. With small
+query initialisation and decoder dropout, both seeds collapse: evaluated normally, minFDE$_6$
+is above 10\,m and the six endpoints lie about 1\,m apart, while the same weights evaluated
+with dropout on reach about 1\,m minFDE$_6$ with a spread of about 14\,m. The diversity is
+present only when the noise is.
+
+Changing either factor alone removes the failure in this setting. With small initialisation
+but no decoder dropout, the model reaches about 0.5\,m minFDE$_6$, so winner-takes-all training
+separates near-identical queries without help when no noise source is available. With decoder
+dropout but unit-scale initialisation, the model reaches about 0.4\,m, so dropout does not
+cause collapse when the queries are already distinct. In all three non-collapsed cells the
+spread is the same with dropout on and off, which indicates that the diversity is carried by
+the queries.
+
+The initial fix described in Section~\ref{sec:method} changed both factors at once; this study
+shows that either change would have sufficed here. With two seeds per cell and a single
+synthetic task, we do not claim that either remedy is sufficient in general.

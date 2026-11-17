@@ -1,0 +1,122 @@
+[
+  {
+    "query_init_std": 0.02,
+    "decoder_dropout": 0.0,
+    "seed": 0,
+    "eval_mode": {
+      "minFDE": 0.48695323944091795,
+      "MR": 0.01875,
+      "spread": 14.377296447753906
+    },
+    "train_mode": {
+      "minFDE": 0.5365585803985595,
+      "MR": 0.02625,
+      "spread": 14.372959899902344
+    }
+  },
+  {
+    "query_init_std": 0.02,
+    "decoder_dropout": 0.0,
+    "seed": 1,
+    "eval_mode": {
+      "minFDE": 0.5454731750488281,
+      "MR": 0.015,
+      "spread": 20.856293029785157
+    },
+    "train_mode": {
+      "minFDE": 0.6196631813049316,
+      "MR": 0.02375,
+      "spread": 20.83133331298828
+    }
+  },
+  {
+    "query_init_std": 0.02,
+    "decoder_dropout": 0.1,
+    "seed": 0,
+    "eval_mode": {
+      "minFDE": 10.786309509277343,
+      "MR": 0.53,
+      "spread": 1.076377773284912
+    },
+    "train_mode": {
+      "minFDE": 1.1131895637512208,
+      "MR": 0.1225,
+      "spread": 14.411422424316406
+    }
+  },
+  {
+    "query_init_std": 0.02,
+    "decoder_dropout": 0.1,
+    "seed": 1,
+    "eval_mode": {
+      "minFDE": 10.507150421142578,
+      "MR": 0.555,
+      "spread": 0.5511399173736572
+    },
+    "train_mode": {
+      "minFDE": 1.0209188842773438,
+      "MR": 0.11,
+      "spread": 13.537141418457031
+    }
+  },
+  {
+    "query_init_std": 1.0,
+    "decoder_dropout": 0.0,
+    "seed": 0,
+    "eval_mode": {
+      "minFDE": 0.42110389709472656,
+      "MR": 0.01125,
+      "spread": 14.726250610351563
+    },
+    "train_mode": {
+      "minFDE": 0.46807849884033204,
+      "MR": 0.015,
+      "spread": 14.729686584472656
+    }
+  },
+  {
+    "query_init_std": 1.0,
+    "decoder_dropout": 0.0,
+    "seed": 1,
+    "eval_mode": {
+      "minFDE": 0.3844054317474365,
+      "MR": 0.0025,
+      "spread": 14.258953552246094
+    },
+    "train_mode": {
+      "minFDE": 0.42825533866882326,
+      "MR": 0.005,
+      "spread": 14.259248962402344
+    }
+  },
+  {
+    "query_init_std": 1.0,
+    "decoder_dropout": 0.1,
+    "seed": 0,
+    "eval_mode": {
+      "minFDE": 0.3996159744262695,
+      "MR": 0.00125,
+      "spread": 13.837608337402344
+    },
+    "train_mode": {
+      "minFDE": 0.5668608474731446,
+      "MR": 0.00875,
+      "spread": 13.803678588867188
+    }
+  },
+  {
+    "query_init_std": 1.0,
+    "decoder_dropout": 0.1,
+    "seed": 1,
+    "eval_mode": {
+      "minFDE": 0.4273540687561035,
+      "MR": 0.0075,
+      "spread": 14.030289306640626
+    },
+    "train_mode": {
+      "minFDE": 0.6584697341918946,
+      "MR": 0.03,
+      "spread": 13.958131713867187
+    }
+  }
+]
