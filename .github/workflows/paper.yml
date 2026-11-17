@@ -3,7 +3,7 @@ name: paper
 on:
   push:
     branches: [main]
-    paths: ["paper/**", "assets/**", ".github/workflows/paper.yml"]
+    paths: ["paper/**", "assets/**", "scripts/make_arxiv_bundle.py", ".github/workflows/paper.yml"]
   workflow_dispatch:
 
 jobs:
@@ -20,3 +20,17 @@ jobs:
         with:
           name: scenecast-paper
           path: paper/scenecast.pdf
+      - name: Assemble the arXiv upload folder
+        run: python scripts/make_arxiv_bundle.py
+      - name: Compile the arXiv version (produces the .bbl arXiv needs)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: scenecast.tex
+          working_directory: paper/arxiv
+      - uses: actions/upload-artifact@v4
+        with:
+          name: arxiv-upload
+          path: |
+            paper/arxiv/scenecast.tex
+            paper/arxiv/scenecast.bbl
+            paper/arxiv/*.png
