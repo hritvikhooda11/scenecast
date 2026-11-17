@@ -26,6 +26,8 @@ class ModelConfig:
     enc_layers: int = 4
     dec_layers: int = 2
     dropout: float = 0.1
+    decoder_dropout: float = 0.0  # see the note in SceneCast.__init__ before raising this
+    query_init_std: float = 1.0
     n_modes: int = 6
     use_map: bool = True
     use_neighbors: bool = True
@@ -75,10 +77,11 @@ class SceneCast(nn.Module):
         self.encoder = nn.TransformerEncoder(layer, cfg.enc_layers, enable_nested_tensor=False)
         # No dropout in the decoder: with it, winner-takes-all training learns to use dropout noise as
         # the source of mode diversity, and the modes collapse onto one another at eval time.
-        dec = nn.TransformerDecoderLayer(d, cfg.n_heads, 4 * d, 0.0, batch_first=True, norm_first=True)
+        dec = nn.TransformerDecoderLayer(d, cfg.n_heads, 4 * d, cfg.decoder_dropout, batch_first=True, norm_first=True)
         self.decoder = nn.TransformerDecoder(dec, cfg.dec_layers)
 
-        self.mode_queries = nn.Parameter(torch.randn(cfg.n_modes, d))  # unit scale so modes start distinct
+        # unit scale by default so the modes start out distinct
+        self.mode_queries = nn.Parameter(torch.randn(cfg.n_modes, d) * cfg.query_init_std)
         self.focal_proj = nn.Linear(d, d)
         self.traj_head = mlp(d, 2 * d, T_FUT * 2)
         self.conf_head = mlp(d, d, 1)

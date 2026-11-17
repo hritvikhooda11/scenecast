@@ -67,6 +67,8 @@ def main() -> None:
     ap.add_argument("--enc-layers", type=int, default=4)
     ap.add_argument("--dec-layers", type=int, default=2)
     ap.add_argument("--modes", type=int, default=6)
+    ap.add_argument("--decoder-dropout", type=float, default=0.0, help="mode-collapse study only")
+    ap.add_argument("--query-init-std", type=float, default=1.0, help="mode-collapse study only")
     ap.add_argument("--no-map", action="store_true", help="ablation: hide lane tokens")
     ap.add_argument("--no-neighbors", action="store_true", help="ablation: hide other agents")
     args = ap.parse_args()
@@ -83,6 +85,8 @@ def main() -> None:
         n_modes=args.modes,
         use_map=not args.no_map,
         use_neighbors=not args.no_neighbors,
+        decoder_dropout=args.decoder_dropout,
+        query_init_std=args.query_init_std,
     )
     model = SceneCast(cfg).to(device)
     n_params = sum(p.numel() for p in model.parameters())
