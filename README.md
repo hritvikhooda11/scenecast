@@ -44,7 +44,7 @@ lane centerlines [96 x 10 pts] --> polyline encoder --+        (4 layers)       
 ## Results
 
 Trained on 20,000 scenarios (10% of the Argoverse 2 training set) for 40 epochs,
-about 2.5 hours on an Apple M4 laptop. Evaluated on 3,000 validation scenarios,
+about 3.5 hours per run on an Apple M4 laptop with the three runs below sharing the GPU. Evaluated on 3,000 validation scenarios,
 6 modes, 6 second horizon. Lower is better everywhere.
 
 | Model | minADE | minFDE | Miss rate | brier-minFDE | minFDE (top-1) |
