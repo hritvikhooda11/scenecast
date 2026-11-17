@@ -19,6 +19,8 @@ predicted futures with their confidences. Grey is the lane map and other agents.
 | Constant velocity | 4.75 m | 12.25 m | 0.87 |
 | **SceneCast** | **1.06 m** | **2.07 m** | **0.32** |
 
+**Technical report:** [paper/scenecast.pdf](paper/scenecast.pdf) (9 pages: method, results, ablations, failure analysis and a controlled study of the mode-collapse bug).
+
 ## How it works
 
 ```
