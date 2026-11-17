@@ -120,7 +120,9 @@ The cause was the decoder. The mode queries were initialised almost identically
 differed mainly through dropout noise. Winner-takes-all training happily used
 that noise as its source of diversity. With dropout off at eval time, the modes
 collapsed into one. Initialising the queries at unit scale and removing dropout
-from the decoder fixed it:
+from the decoder fixed it. A follow-up 2x2 study with two seeds per setting
+([`results/collapse_study.json`](results/collapse_study.json)) showed the collapse
+needs both conditions together, and that either change alone avoids it:
 
 | Synthetic intersections (800 val scenes) | minADE | minFDE | Miss rate |
 |---|---|---|---|
